@@ -215,6 +215,12 @@ h1 em{background:none!important;-webkit-background-clip:initial!important;backgr
       .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,.9fr)!important;gap:24px!important}
       .hero h1{font-size:clamp(42px,5.4vw,60px)!important}
     }
+
+/* Canonical Eric artwork: use the clean, transparent 2D character rather than the scrapyard background as the main visual. */
+.hero-art{display:flex;align-items:center;justify-content:center;min-width:0;min-height:0;padding:8px 0 0}
+.hero-art img{display:block;width:min(100%,540px);max-height:590px;height:auto;object-fit:contain;filter:drop-shadow(0 18px 24px #0008)}
+.eric-about-art{display:block;width:min(100%,310px);height:auto;object-fit:contain;margin:28px auto 0;filter:drop-shadow(0 12px 18px #0006)}
+@media(max-width:700px){.hero-art{width:100%;padding:0}.hero-art img{width:min(88%,390px);max-height:420px}.eric-about-art{width:min(78%,270px);margin-top:22px}}
 </style>
 </head>
 <body>
@@ -231,7 +237,7 @@ h1 em{background:none!important;-webkit-background-clip:initial!important;backgr
     <section class="hero" id="home" aria-labelledby="hero-title">
       <div class="wrap hero-grid">
         <div class="hero-art">
-          <img src="./assets/ericsawakening-hero-desktop.webp" alt="Eric the earthworm in the Manchester scrapyard where he woke up" fetchpriority="high">
+          <img src="./assets/eric-web.webp" alt="Eric, the orange and green spotted earthworm wearing his blue bobble hat" fetchpriority="high">
         </div>
         <div class="hero-copy">
           <div class="hero-label">A worm · A blockchain · Some questionable decisions</div>
@@ -255,7 +261,7 @@ h1 em{background:none!important;-webkit-background-clip:initial!important;backgr
 
     <section class="section" id="about" aria-labelledby="about-title"><div class="wrap">
       <div class="section-head"><div><div class="eyebrow">01 / A quick introduction</div><h2 id="about-title">So, what is ERIC?</h2></div><p>A meme token with a character and a strange origin story. The token and the fictional universe remain separate.</p></div>
-      <div class="about-grid"><div class="about-lead">ERIC is a meme token.<br>That’s it, really.</div><div class="about-body">
+      <div class="about-grid"><div class="about-lead">ERIC is a meme token.<br>That’s it, really.<img class="eric-about-art" src="./assets/eric-web.webp" alt="Eric smiling in his blue bobble hat" loading="lazy"></div><div class="about-body">
         <p>ERIC is a publicly tradable meme token on Solana, launched using Pump.fun’s existing infrastructure. It doesn’t have a complicated purpose. It isn’t powering revolutionary technology or unlocking a secret worm society. People can trade it. That’s what it does.</p><p>There is no utility attached to the token. No grand development roadmap. No promises about what might happen next.</p>
         <p>I’m part of <strong>WORMS ON ACID</strong>, a fictional universe of stories, characters, artwork, music and games. ERIC is a separate token experiment.</p>
         <div class="split-note"><b>Separate things, clearly:</b> holding ERIC gives you no ownership or rights over Eric, the characters, artwork, stories or other WORMS ON ACID intellectual property.</div>
