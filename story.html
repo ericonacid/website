@@ -8,7 +8,7 @@
 <title>Before the Morning After — Eric</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Roboto+Slab:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=IBM+Plex+Mono:wght@400;500;600&family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--night:#171815;--paper:#eee5cf;--paper-dark:#d9ceb3;--ink:#29251d;--muted:#706858;--orange:#e98235;--line:#c9bea5;--mono:'IBM Plex Mono',monospace;--serif:'Roboto Slab',Georgia,serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.85}
@@ -41,6 +41,20 @@ footer{background:#0c0e0c;color:#aaa18e;text-align:center;padding:22px;font:10px
 @media(max-width:1150px){.contents{position:sticky;top:0;transform:none;max-width:none;border:0;border-bottom:1px solid #ffffff24;padding:12px 20px}.contents nav{grid-template-columns:repeat(3,minmax(0,1fr));max-height:none}.contents details{max-width:760px;margin:auto}}
 @media(max-width:600px){header{height:60px;padding:0 18px}.intro{padding:65px 20px 55px}.intro-art{height:145px;margin-top:28px}.story-shell{padding:52px 23px 70px}.note{margin-bottom:45px;padding-bottom:42px}.chapter{margin-bottom:43px;padding-bottom:43px}p{font-size:15px;line-height:1.88}.contents nav{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.end{padding:58px 22px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Shared WOA type system and a continuous, tactile parchment reading surface. */
+:root{--mono:'IBM Plex Mono',monospace;--serif:'Roboto Slab',Georgia,serif;--display:'Bowlby One SC',Impact,sans-serif;--paper:#eadbb8;--ink:#292116;--line:#c6ad7e}
+body{background-color:#e7d2a2;background-image:url('./assets/eric-parchment-texture.svg');background-repeat:repeat;background-size:420px 420px;color:var(--ink);font-family:var(--serif)}
+h1{font:400 clamp(42px,7vw,78px)/1.05 var(--display);letter-spacing:0}
+.note h2,.chapter h2{font:400 17px/1.25 var(--display);letter-spacing:.015em;color:#925027}
+.chapter h2{font-size:18px}
+.brand{font:400 14px var(--display);letter-spacing:.02em}
+.kicker,.back,.contents summary,.contents a,.end .signoff,footer{font-family:var(--mono)}
+.intro:after{background:#a8794d}
+.story-shell{background:rgba(248,237,210,.58);box-shadow:0 0 0 1px rgba(125,91,48,.08)}
+.note,.chapter{border-color:rgba(139,102,54,.34)}
+.pause{background:#b5a078}
+@media(max-width:600px){.story-shell{background:rgba(248,237,210,.48);box-shadow:none}}
 </style>
 </head>
 <body>
