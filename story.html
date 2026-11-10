@@ -76,6 +76,37 @@ p{font:400 21px/1.52 var(--hand);margin:0 0 25px}
  .chapter{margin-bottom:36px;padding-bottom:35px}
  .contents nav{gap:10px}
 }
+
+/* Illustrated field-notes reading treatment */
+:root{--night:#062326;--paper:#eadbb8;--paper-dark:#d9ceb3;--ink:#292116;--line:#c6ad7e}
+.intro{background:radial-gradient(ellipse at 50% 75%,#145052 0%,#08282a 55%,#061719 100%);padding:62px 24px 54px;overflow:hidden}
+.intro:after{height:5px;background:linear-gradient(90deg,#e98235,#2fd0c2,#1686d9,#e98235)}
+.intro-art{width:min(300px,68vw);height:150px;margin:24px auto 0}
+.story-shell{max-width:900px;padding:56px 52px 90px;background:rgba(248,237,210,.58);box-shadow:0 18px 60px #6f54251a}
+.chapter{position:relative;padding:28px 34px 34px;margin:0 0 30px;border:1px solid rgba(139,102,54,.24);border-left:5px solid var(--orange);background:rgba(255,249,231,.55);box-shadow:5px 5px 0 rgba(124,91,48,.08);scroll-margin-top:100px}
+.chapter h2{font-size:32px;margin-bottom:24px}
+.chapter h2:after{height:2px;background:linear-gradient(90deg,var(--orange),transparent)}
+.contents{position:sticky;top:0;z-index:5;background:#062326f5;color:var(--paper);padding:12px 20px;border:0;border-bottom:1px solid #ffffff24;max-width:none;transform:none}
+.contents summary{text-align:center;font-size:10px}
+.contents nav{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin:12px auto 0;max-width:1100px;max-height:0;overflow:hidden}
+.contents[open] nav{max-height:180px;overflow:auto}
+.contents a{font-size:10px}
+@media(max-width:1150px){.contents nav{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:600px){
+ .intro{padding:48px 20px 42px}
+ .intro-art{height:125px;margin-top:18px}
+ .story-shell{padding:30px 15px 52px;background:transparent;box-shadow:none}
+ .note{margin:0 8px 34px;padding-bottom:30px}
+ .chapter{margin:0 0 18px;padding:22px 20px 25px;border-left-width:4px}
+ .chapter h2{font-size:27px;margin-bottom:18px}
+ .note h2{font-size:23px}
+ .note .hello{font-size:29px}
+ p{font-size:19px;line-height:1.5;margin-bottom:20px}
+ .contents{padding:11px 12px}
+ .contents nav{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .contents[open] nav{max-height:360px}
+ .end{padding:48px 22px}
+}
 </style>
 </head>
 <body>
