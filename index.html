@@ -163,6 +163,19 @@ h1 em{background:none!important;-webkit-background-clip:initial!important;backgr
   }
   .hero-copy{width:100%;max-width:650px!important;margin:0!important}
 }
+
+/* Orientation-based fallback: Android can report a wider CSS viewport in landscape. */
+@media (orientation:landscape) and (max-height:1000px){
+  .hero{min-height:0!important;height:auto!important;align-items:flex-start!important}
+  .hero-grid{
+    display:flex!important;flex-direction:column!important;
+    justify-content:flex-start!important;align-items:flex-start!important;
+    min-height:0!important;height:auto!important;
+    padding:24px 0 36px!important;
+  }
+  .hero-copy{width:100%!important;max-width:680px!important;margin:0!important}
+  .hero-label{margin-top:0!important}
+}
 </style>
 </head>
 <body>
