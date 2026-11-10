@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+<defs>
+ <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".72" numOctaves="3" seed="17"/><feColorMatrix values="0 0 0 0 .48 0 0 0 0 .39 0 0 0 0 .23 0 0 0 .18 0"/><feBlend in="SourceGraphic" mode="multiply"/></filter>
+ <linearGradient id="paper" x2="0" y2="1"><stop stop-color="#f8e9c4"/><stop offset="1" stop-color="#e7d2a2"/></linearGradient>
+ <linearGradient id="rim" x2="0" y2="1"><stop stop-color="#c9ad76"/><stop offset=".5" stop-color="#dfc58f"/><stop offset="1" stop-color="#b99760"/></linearGradient>
+</defs>
+<rect width="256" height="256" fill="#b99b67"/>
+<path d="M0 0H256V256H0Z" fill="url(#rim)"/>
+<path d="M0 0L256 0L256 256L0 256Z" fill="url(#paper)" stroke="#a9824c" stroke-width="3"/>
+<path d="M9 9H247V247H9Z" fill="none" stroke="#fff3d5" stroke-opacity=".68" stroke-width="2"/>
+<path d="M18 18H238V238H18Z" fill="none" stroke="#9d7947" stroke-opacity=".28" stroke-width="1"/>
+<rect width="256" height="256" opacity=".24" filter="url(#grain)"/>
+<g fill="#8d6b3f" opacity=".18"><circle cx="16" cy="72" r="2"/><circle cx="238" cy="184" r="2.4"/><circle cx="82" cy="14" r="1.8"/><circle cx="174" cy="242" r="2"/></g>
+</svg>
