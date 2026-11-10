@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="500" viewBox="0 0 720 500">
+<defs>
+ <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".65" numOctaves="3" seed="31"/><feColorMatrix values="0 0 0 0 .5 0 0 0 0 .42 0 0 0 0 .28 0 0 0 .14 0"/><feBlend in="SourceGraphic" mode="multiply"/></filter>
+ <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feGaussianBlur stdDeviation="9"/></filter>
+ <linearGradient id="paper" x2="0" y2="1"><stop stop-color="#f9edce"/><stop offset="1" stop-color="#e8d4a8"/></linearGradient>
+ <path id="shape" d="M18 25L42 19L68 23L91 17L119 22L146 18L173 24L204 18L234 22L263 17L294 22L322 18L351 23L382 17L412 22L444 18L474 23L505 17L536 22L565 18L594 24L623 19L650 24L681 20L701 31L696 59L702 86L697 114L703 143L698 171L703 199L697 228L702 256L697 284L703 313L698 341L702 369L697 398L703 427L696 454L702 477L681 482L653 477L625 483L596 477L568 483L539 478L510 484L482 478L453 483L425 478L396 484L367 478L338 483L309 478L280 484L252 478L223 483L194 478L166 484L137 478L108 483L80 478L51 484L24 478L18 456L23 428L17 399L23 370L17 341L23 312L17 284L23 255L17 227L23 198L17 170L23 142L17 113L23 85L17 56Z"/>
+</defs>
+<use href="#shape" fill="#6d5432" opacity=".25" filter="url(#shadow)" transform="translate(5 8)"/>
+<use href="#shape" fill="url(#paper)" stroke="#b18d58" stroke-width="2"/>
+<use href="#shape" fill="none" stroke="#fff4d8" stroke-width="3" opacity=".65" transform="translate(0 1)"/>
+<use href="#shape" opacity=".22" filter="url(#grain)"/>
+</svg>
