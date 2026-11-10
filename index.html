@@ -8,7 +8,7 @@
   <title>ERIC ON ACID — Hello Eric</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=IBM+Plex+Mono:wght@400;500;600;700&family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=IBM+Plex+Mono:wght@400;500;600;700&family=Lilita+One&family=Patrick+Hand&display=swap" rel="stylesheet">
   <style>
     :root{--ink:#171815;--paper:#e7e1cf;--acid:#91c83e;--muted:#aaa394;--line:#45463d;--orange:#f08a32;--max:1220px;--mono:'Courier New',monospace;--display:'Trebuchet MS','Arial Rounded MT Bold',Arial,sans-serif}
     *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px} :focus-visible{outline:3px solid var(--acid);outline-offset:4px}.skip-link{position:absolute;left:12px;top:-60px;z-index:50;background:var(--acid);color:#171815;padding:12px 16px;font:700 12px var(--mono)}.skip-link:focus{top:12px}.text-link{display:inline-block;margin-top:18px;color:var(--paper);font:700 11px var(--mono);text-transform:uppercase;letter-spacing:.06em}body{margin:0;background:var(--ink);color:var(--paper);font-family:Arial,Helvetica,sans-serif;line-height:1.6}a{color:inherit}.wrap{width:min(var(--max),calc(100% - 48px));margin:auto}.eyebrow{font:700 11px var(--mono);letter-spacing:.15em;text-transform:uppercase;color:var(--acid)}
@@ -122,22 +122,16 @@ h1{font-size:clamp(46px,5.4vw,72px);max-width:620px}
     }
 
     @media(max-width:380px){h1{font-size:clamp(35px,9.8vw,42px)}}
-    /* WOA-aligned typography: expressive display, slab reading face, mono utility. */
-    h1,h2,h3,.fact b,.about-lead,.detail-card h3,.transparency h3,summary,.footer-mark,.woa-card h3{
-      font-family:'Bowlby One SC',Impact,sans-serif;
-      font-weight:400;
-      letter-spacing:0;
-    }
-    body{font-family:'Roboto Slab',Georgia,serif}
-    .eyebrow,.nav a,.hero-label,.button,.text-link,.launch-note,.fact span,.token-table div,
-    .detail-card .num,.split-note,.hero-note,.checklist li,.footer small,.warning{
-      font-family:'IBM Plex Mono','Courier New',monospace;
-    }
-    h1 em{background:none!important;-webkit-background-clip:initial!important;background-clip:border-box!important;color:var(--paper)!important}
-    .hero-label,.eyebrow{color:#e9bd8c}
-    .about-lead,.risk .section-head h2{color:#e9bd8c}
-    .button:hover{background:#e9bd8c;border-color:#e9bd8c;color:#171815}
-    </style>
+    /* WOA type hierarchy: Lilita One display, Patrick Hand voice, Bangers accents. */
+:root{--woa-display:'Lilita One',Impact,sans-serif;--woa-comic:'Bangers',Impact,sans-serif;--woa-hand:'Patrick Hand','Comic Sans MS',cursive;--woa-mono:'IBM Plex Mono',monospace}
+body{font-family:var(--woa-hand)}
+h1,h2,.section-head h2,.about-lead,.fact b,.detail-card h3,.transparency h3,.footer-mark{font-family:var(--woa-display);font-weight:400;letter-spacing:0;line-height:.98}
+.hero h1{line-height:.94;letter-spacing:-.015em}
+.nav a,.eyebrow,.hero-label,.button,.text-link,.launch-note,.fact span,.token-table div,.detail-card .num,.split-note,.hero-note,.footer small,.warning{font-family:var(--woa-mono)}
+.detail-card h3,.woa-card h3{font-family:var(--woa-comic);font-weight:400;letter-spacing:.02em}
+.hero p,.about-copy,.section-copy,.detail-card p,.transparency p{font-family:var(--woa-hand);font-size:1.18em;line-height:1.42}
+h1 em{background:none!important;-webkit-background-clip:initial!important;background-clip:border-box!important;color:var(--paper)!important}
+</style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
