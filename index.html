@@ -131,6 +131,16 @@ h1,h2,.section-head h2,.about-lead,.fact b,.detail-card h3,.transparency h3,.foo
 .detail-card h3,.woa-card h3{font-family:var(--woa-comic);font-weight:400;letter-spacing:.02em}
 .hero p,.about-copy,.section-copy,.detail-card p,.transparency p{font-family:var(--woa-hand);font-size:1.18em;line-height:1.42}
 h1 em{background:none!important;-webkit-background-clip:initial!important;background-clip:border-box!important;color:var(--paper)!important}
+
+/* Bring the mobile hero content up under the navigation. */
+@media(max-width:700px){
+  .hero-grid{
+    justify-content:flex-start;
+    min-height:0;
+    padding:30px 0 48px;
+  }
+  .hero{min-height:0}
+}
 </style>
 </head>
 <body>
