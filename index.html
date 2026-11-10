@@ -6,6 +6,9 @@
   <meta name="theme-color" content="#171815">
   <meta name="description" content="Hello. I'm Eric. I'm a worm from a Manchester scrapyard. And now, apparently, I've got a cryptocurrency. The facts, the mechanics and the risks.">
   <title>ERIC ON ACID — Hello Eric</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=IBM+Plex+Mono:wght@400;500;600;700&family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root{--ink:#171815;--paper:#e7e1cf;--acid:#91c83e;--muted:#aaa394;--line:#45463d;--orange:#f08a32;--max:1220px;--mono:'Courier New',monospace;--display:'Trebuchet MS','Arial Rounded MT Bold',Arial,sans-serif}
     *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px} :focus-visible{outline:3px solid var(--acid);outline-offset:4px}.skip-link{position:absolute;left:12px;top:-60px;z-index:50;background:var(--acid);color:#171815;padding:12px 16px;font:700 12px var(--mono)}.skip-link:focus{top:12px}.text-link{display:inline-block;margin-top:18px;color:var(--paper);font:700 11px var(--mono);text-transform:uppercase;letter-spacing:.06em}body{margin:0;background:var(--ink);color:var(--paper);font-family:Arial,Helvetica,sans-serif;line-height:1.6}a{color:inherit}.wrap{width:min(var(--max),calc(100% - 48px));margin:auto}.eyebrow{font:700 11px var(--mono);letter-spacing:.15em;text-transform:uppercase;color:var(--acid)}
@@ -43,6 +46,81 @@ h1{font-size:clamp(46px,5.4vw,72px);max-width:620px}
       .hero-copy p{width:100%;max-width:100%;overflow-wrap:break-word}
       .actions{max-width:100%}
     }
+
+    /* ERIC's own paper-and-ink language: inspired by WOA, newly drawn for this site. */
+    :root{
+      --ink:#08100d;--paper:#f4e5bf;--acid:#fecb8b;--muted:#c7b994;
+      --line:#514331;--orange:#ff6700;--display:'Bowlby One SC',Impact,sans-serif;
+      --mono:'IBM Plex Mono','Courier New',monospace;
+    }
+    body{
+      background:radial-gradient(circle at 30% 0,#17221d 0%,#08100d 58%,#050807 100%);
+      color:#f4e5bf;font-family:'Roboto Slab',Georgia,serif;
+    }
+    h1,h2,h3,.fact b,.about-lead,.detail-card h3,.transparency h3,summary,.footer-mark,.woa-card h3{
+      font-family:var(--display);font-weight:400;letter-spacing:.005em;
+    }
+    .eyebrow,.nav a,.hero-label,.button,.text-link,.launch-note,.fact span,.token-table div,
+    .detail-card .num,.split-note,.hero-note,.checklist li,.footer small,.warning{font-family:var(--mono)}
+    .hero:before{
+      background:linear-gradient(90deg,#08100d 0%,#08100de8 31%,#08100d88 59%,#08100d18 100%),
+      linear-gradient(0deg,#08100d 0%,transparent 24%),url('./assets/ericsawakening-hero-desktop.webp') center 46%/cover no-repeat;
+    }
+    .hero-label,.eyebrow{color:#fecb8b}
+    h1 em{background:linear-gradient(100deg,#fecb8b 0%,#ff8a28 55%,#ff6700 100%);-webkit-background-clip:text;background-clip:text}
+    .facts{background:#17221d;border-top:1px solid #ffffff22;border-bottom:1px solid #ffffff22}
+    .button{background:#fecb8b;color:#10130f;border-color:#fecb8b}
+    .button.secondary{background:transparent;color:#f4e5bf;border-color:#fecb8b}
+    .button:hover{background:#ff6700;border-color:#ff6700;color:#fff}
+    .about-lead,.risk .section-head h2{color:#ff8a28}
+    .quote{
+      position:relative;border:0;padding:42px 54px 48px;margin:34px 0 0;
+      background:url('./assets/eric-torn-note.svg') center/100% 100% no-repeat;
+      color:#332719;font:italic 19px/1.55 'Roboto Slab',Georgia,serif;
+      transform:rotate(-.6deg);filter:drop-shadow(0 7px 8px #0005);
+    }
+    .split-note,.detail-card,.transparency-block{
+      border:22px solid transparent;
+      border-image-source:url('./assets/eric-paper-panel.svg');
+      border-image-slice:42 fill;
+      border-image-width:22px;
+      border-image-repeat:stretch;
+      background:transparent;
+      color:#302719;
+    }
+    .split-note{color:#382a19;font-size:12px}
+    .split-note b{color:#b94b0a}
+    .details{background:#e7d7b0;color:#211b12}
+    .details .eyebrow,.transparency .eyebrow{color:#a3480b}
+    .details .section-head p,.detail-card p,.detail-card li{color:#403321}
+    .detail-card{min-height:250px}
+    .detail-card h3,.transparency h3{color:#241b10}
+    .detail-card .num{color:#b64c0b}
+    .token-table{border-color:#aa8f5f}
+    .token-table div{border-color:#c5ac7d;color:#2c2418}
+    .unknown{color:#9a3b18!important}
+    .transparency-block p,.risk-list li{color:#403321}
+    .transparency-block .eyebrow,.faq-block .eyebrow{color:#a3480b}
+    .transparency-block .small-note{color:#6d5634}
+    .risk{background:#0b100d}
+    .risk-grid{background:#5b3b24;border-color:#5b3b24}
+    .risk-item{background:#111a15}
+    .risk-item b{color:#ff8a28}
+    .warning{border-color:#ff6700;color:#ffd6ad}
+    .faq-block{border-color:#665039}
+    .faq-block details{border-color:#665039}
+    .faq-block summary:after{color:#ff8a28}
+    .faq-block details p{color:#e0d4b8}
+    .footer{background:#050807}
+    .footer a{color:#fecb8b}
+    .woa-link{border-color:#fecb8b!important;color:#fecb8b!important}
+    .woa-link:hover{background:#fecb8b;color:#08100d!important}
+    @media(max-width:700px){
+      .quote{padding:34px 36px 40px;font-size:16px}
+      .split-note,.detail-card,.transparency-block{border-width:16px;border-image-width:16px}
+      .details{background:#e7d7b0}
+    }
+
     @media(max-width:380px){h1{font-size:clamp(35px,9.8vw,42px)}}</style>
 </head>
 <body>
