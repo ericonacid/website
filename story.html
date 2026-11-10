@@ -165,5 +165,100 @@ p{font:400 21px/1.52 var(--hand);margin:0 0 25px}
 <section class="end"><p class="final">That's as much as I can remember.<br>For now.</p><div class="signoff">ERIC</div></section>
 </main>
 <footer>ERIC ON ACID · A PERSONAL HISTORY</footer>
+
+<style>
+.story-reader-controls{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;margin:0 0 30px;padding:16px 18px;background:#062326;color:var(--paper);border:1px solid #1c5557;box-shadow:4px 4px 0 rgba(6,35,38,.12)}
+.story-reader-controls button{appearance:none;border:1px solid #d2a16f;background:#e98235;color:#171815;padding:12px 16px;cursor:pointer;font:500 11px var(--mono);letter-spacing:.06em}
+.story-reader-controls button.prev{justify-self:start;background:transparent;color:var(--paper);border-color:#66817b}
+.story-reader-controls button.next{justify-self:end}
+.story-reader-controls button:disabled{opacity:.35;cursor:not-allowed}
+.story-reader-status{text-align:center;min-width:110px}
+.story-reader-count{display:block;color:#e9bd8c;font:500 10px var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.story-reader-title{display:block;margin-top:5px;color:#fff;font:400 17px var(--display)}
+.story-reader-progress{height:4px;background:#ffffff20;margin:0 0 34px;overflow:hidden}
+.story-reader-progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#e98235,#2fd0c2);transition:width .2s ease}
+.story-shell .reader-page[hidden]{display:none!important}
+.story-shell .reader-page{animation:readerIn .22s ease both}
+.story-reader-bottom{margin-top:28px}
+.story-reader-bottom .story-reader-controls{margin-bottom:0}
+@keyframes readerIn{from{opacity:.35;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:600px){.story-reader-controls{gap:6px;padding:12px 9px}.story-reader-controls button{padding:11px 9px;font-size:10px}.story-reader-status{min-width:86px}.story-reader-title{font-size:15px}.story-reader-progress{margin-bottom:24px}}
+@media(prefers-reduced-motion:reduce){.story-shell .reader-page{animation:none}.story-reader-progress span{transition:none}}
+</style>
+<script>
+(function(){
+  function initEricReader(){
+    var shell=document.querySelector('.story-shell');
+    if(!shell || shell.dataset.readerReady) return;
+    var note=shell.querySelector('.note');
+    var chapters=Array.prototype.slice.call(shell.querySelectorAll('.chapter'));
+    if(!note || !chapters.length) return;
+    shell.dataset.readerReady='true';
+    var pages=[note].concat(chapters);
+    var names=['A note from Eric'].concat(chapters.map(function(ch){var h=ch.querySelector('h2');return h?h.textContent.trim():'Section';}));
+    pages.forEach(function(page){page.classList.add('reader-page');});
+    function makeControls(){
+      var el=document.createElement('div');
+      el.className='story-reader-controls';
+      el.innerHTML='<button type="button" class="prev" aria-label="Previous section">← Previous</button><div class="story-reader-status" aria-live="polite"><span class="story-reader-count"></span><span class="story-reader-title"></span></div><button type="button" class="next" aria-label="Next section">Next →</button>';
+      return el;
+    }
+    var top=makeControls(), bottom=makeControls();
+    bottom.classList.add('story-reader-bottom');
+    var progress=document.createElement('div');
+    progress.className='story-reader-progress';
+    progress.setAttribute('role','progressbar');
+    progress.setAttribute('aria-label','Story reading progress');
+    progress.setAttribute('aria-valuemin','1');
+    progress.setAttribute('aria-valuemax',String(pages.length));
+    progress.innerHTML='<span></span>';
+    shell.insertBefore(progress,shell.firstChild);
+    shell.insertBefore(top,progress);
+    shell.appendChild(bottom);
+    var prev=[top.querySelector('.prev'),bottom.querySelector('.prev')];
+    var next=[top.querySelector('.next'),bottom.querySelector('.next')];
+    var counts=[top.querySelector('.story-reader-count'),bottom.querySelector('.story-reader-count')];
+    var titles=[top.querySelector('.story-reader-title'),bottom.querySelector('.story-reader-title')];
+    var bar=progress.querySelector('span'), index=0, key='eric-story-reader-section-v1';
+    function show(n,scroll){
+      index=Math.max(0,Math.min(pages.length-1,n));
+      pages.forEach(function(page,i){page.hidden=i!==index;});
+      counts.forEach(function(el){el.textContent=index===0?'INTRODUCTION':'SECTION '+index+' OF '+chapters.length;});
+      titles.forEach(function(el){el.textContent=names[index];});
+      prev.forEach(function(el){el.disabled=index===0;});
+      next.forEach(function(el){el.disabled=index===pages.length-1;el.textContent=index===pages.length-1?'End of story':'Next →';});
+      bar.style.width=((index+1)/pages.length*100)+'%';
+      progress.setAttribute('aria-valuenow',String(index+1));
+      try{localStorage.setItem(key,String(index));}catch(e){}
+      if(scroll)shell.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+    }
+    prev.forEach(function(el){el.addEventListener('click',function(){show(index-1,true);});});
+    next.forEach(function(el){el.addEventListener('click',function(){show(index+1,true);});});
+    var contents=document.querySelector('.contents');
+    if(contents){
+      contents.querySelectorAll('a[href^="#"]').forEach(function(a){
+        a.addEventListener('click',function(e){
+          var id=a.getAttribute('href').slice(1);
+          var found=chapters.findIndex(function(ch){return ch.id===id;});
+          if(found>=0){e.preventDefault();show(found+1,true);contents.removeAttribute('open');}
+        });
+      });
+      var nav=contents.querySelector('nav');
+      if(nav){
+        var introLink=document.createElement('a');
+        introLink.href='#story';introLink.textContent='00 · Introduction';
+        introLink.addEventListener('click',function(e){e.preventDefault();show(0,true);contents.removeAttribute('open');});
+        nav.insertBefore(introLink,nav.firstChild);
+      }
+    }
+    var initial=0;
+    try{var saved=localStorage.getItem(key);if(saved!==null && /^\d+$/.test(saved))initial=Math.min(Number(saved),pages.length-1);}catch(e){}
+    if(location.hash){var hi=chapters.findIndex(function(ch){return '#'+ch.id===location.hash;});if(hi>=0)initial=hi+1;}
+    show(initial,false);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initEricReader);else initEricReader();
+})();
+</script>
+
 </body>
 </html>
