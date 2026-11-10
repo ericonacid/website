@@ -164,9 +164,10 @@ h1 em{background:none!important;-webkit-background-clip:initial!important;backgr
   .hero-copy{width:100%;max-width:650px!important;margin:0!important}
 }
 
-/* Unified hero layout: content-led height, no vertical centring or empty spacer. */
+/* Hero is a section, so explicitly cancel the global section padding. */
 .hero{
   display:block!important;
+  padding:0!important;
   min-height:0!important;
   height:auto!important;
   align-items:initial!important;
@@ -179,13 +180,14 @@ h1 em{background:none!important;-webkit-background-clip:initial!important;backgr
   min-height:0!important;
   height:auto!important;
   padding:28px 0 42px!important;
+  margin:0 auto!important;
 }
 .hero-copy{
   width:100%!important;
   max-width:680px!important;
   margin:0!important;
 }
-.hero-label{margin-top:0!important}
+.hero-label{margin:0 0 24px!important}
 </style>
 </head>
 <body>
