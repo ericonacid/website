@@ -121,7 +121,23 @@ h1{font-size:clamp(46px,5.4vw,72px);max-width:620px}
       .details{background:#e7d7b0}
     }
 
-    @media(max-width:380px){h1{font-size:clamp(35px,9.8vw,42px)}}</style>
+    @media(max-width:380px){h1{font-size:clamp(35px,9.8vw,42px)}}
+    /* WOA-aligned typography: expressive display, slab reading face, mono utility. */
+    h1,h2,h3,.fact b,.about-lead,.detail-card h3,.transparency h3,summary,.footer-mark,.woa-card h3{
+      font-family:'Bowlby One SC',Impact,sans-serif;
+      font-weight:400;
+      letter-spacing:0;
+    }
+    body{font-family:'Roboto Slab',Georgia,serif}
+    .eyebrow,.nav a,.hero-label,.button,.text-link,.launch-note,.fact span,.token-table div,
+    .detail-card .num,.split-note,.hero-note,.checklist li,.footer small,.warning{
+      font-family:'IBM Plex Mono','Courier New',monospace;
+    }
+    h1 em{background:none!important;-webkit-background-clip:initial!important;background-clip:border-box!important;color:var(--paper)!important}
+    .hero-label,.eyebrow{color:#e9bd8c}
+    .about-lead,.risk .section-head h2{color:#e9bd8c}
+    .button:hover{background:#e9bd8c;border-color:#e9bd8c;color:#171815}
+    </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
