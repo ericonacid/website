@@ -24,3 +24,7 @@ Holder rewards are conditional on activity, eligibility, available vault balance
 ## Local preview
 
 Open `index.html` in a browser to view the main page. Open `story.html` to view the story reader. Alternatively, serve the repository directory with any static file server.
+
+## Public preview
+
+GitHub Pages serves the static site from the `main` branch and repository root when Pages is enabled in repository settings.
